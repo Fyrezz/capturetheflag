@@ -2,5 +2,41 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.fyrezz.me</groupId>
   <artifactId>CaptureTheFlag</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>    <build>
+      <plugins>
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.8</version>
+          <executions>
+            <execution>
+              <phase>install</phase>
+              <configuration>
+                <target>
+                  <copy file="${project.build.directory}/${project.build.finalName}.jar"
+                        todir="D:\edu\MC\Factions\plugins" />
+                </target>
+              </configuration>
+              <goals>
+                <goal>run</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </build>
+   <repositories>
+       <repository>
+         <id>spigot-repo</id>
+         <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+       </repository>
+   </repositories>
+   <dependencies>
+       <dependency>
+           <groupId>org.spigotmc</groupId>
+           <artifactId>spigot-api</artifactId>
+           <version>1.8.8-R0.1-SNAPSHOT</version><!--change this value depending on the version-->
+           <type>jar</type>
+           <scope>provided</scope>
+       </dependency>
+   </dependencies>
 </project>
